@@ -13,20 +13,25 @@ import {
 
 import LoginComponent from './components/login/LoginComponent';
 import RegisterComponent from './components/register/RegisterComponent';
+import MenuComponent from './components/menu/MenuComponent';
 
 function App() {
   const [isLogged, setLogged] = useState(false);
 
   useEffect(() => {
-    setLogged(true);
+    setLogged(false);
   }, []);
 
   return (
     <Router>
+      <header className="App-header">
+        <MenuComponent />
+      </header>
+     
       <Routes>
-        {!isLogged && <Route path="/" element={<Navigate to="/login"/>}/> } 
+        {isLogged && <Route path="/" element={<Navigate to="/login"/>}/> } 
         <Route path="/" element={  <div className="App">
-        <header className="App-header">
+        <div className="App-body">
           <img src={logo} className="App-logo" alt="logo" />
           <p>Hello Vite + React!</p>
           <h1 className="text-3xl font-bold text-blue-600">Paco</h1>
@@ -52,7 +57,18 @@ function App() {
               Vite Docs
             </a>
           </p>
-        </header>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          
+        </div>
         </div>} 
         />
         <Route path="login" element={<LoginComponent />} />
