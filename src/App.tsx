@@ -27,7 +27,7 @@ function App() {
       <header className="App-header">
         <MenuComponent />
       </header>
-     
+      <div className="App-body">
       <Routes>
         {isLogged && <Route path="/" element={<Navigate to="/login"/>}/> } 
         <Route path="/" element={  <div className="App">
@@ -73,6 +73,8 @@ function App() {
         />
         <Route path="login" element={<LoginComponent />} />
       </Routes>
+      </div>
+    
     </Router>
   )
 }
