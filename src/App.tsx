@@ -24,9 +24,9 @@ function App() {
 
   return (
     <Router>
-      <header className="App-header">
+      {isLogged && <header className="App-header">
         <MenuComponent />
-      </header>
+      </header>}
       <div className="App-body">
       <Routes>
         {isLogged && <Route path="/" element={<Navigate to="/login"/>}/> } 
@@ -71,7 +71,7 @@ function App() {
         </div>
         </div>} 
         />
-        <Route path="login" element={<LoginComponent />} />
+        <Route path="/login" element={<LoginComponent />} />
       </Routes>
       </div>
     
